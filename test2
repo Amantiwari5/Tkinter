@@ -1,0 +1,36 @@
+#login
+    log=Tk()
+    log.title("Fuck management system")
+    log.geometry("900x400")
+    log.configure(bg="white")
+
+
+    #Image import
+    img = Image.open('first.png')
+    img.resize((450,300))
+    img1 = ImageTk.PhotoImage(img)
+    Label(log, image=img1,bg='white').place(x=0,y=80)
+
+    # Labels
+    Label(log, text = " India's Most Secure Bank ", font=('Calibri',16,"bold"),bg="white").place(x=590,y=120)
+
+    #Buttons
+    Button(log, text="Register", font=('Calibri',12),width=30,command="",bg='light blue',border=1,activebackground="red",activeforeground="blue").place(x=590,y=200)
+    Button(log, text="Log in", font=('Calibri',12),width=30,command=Login,bg='light blue',border=1,activebackground="red",activeforeground="blue").place(x=590,y=250)
+
+    #bar
+    my = Menu(log)
+    m=Menu(my)
+    m.add_command(label="Registeration",command='')
+    m.add_command(label="Login",command='')
+    m.add_command(label="setting",command=set)
+    log.config(menu=my)
+    my.add_cascade(label="Menu",menu=m)
+    help=Menu(my)
+    help.add_command(label="Report Problem",command='')
+    help.add_command(label="Feedback",command='')
+    help.add_command(label="About",command='')
+    my.add_cascade(label="Help",menu=help)
+    my.add_command(label="Exit",command='')
+
+    log.mainloop()
